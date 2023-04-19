@@ -7,9 +7,10 @@ LIST_OF_COLORS = ["red", "green", "black", "yellow", "blue", "orange", "purple"]
 
 
 class Group(Turtle):
+    """Generates a new group"""
     def __init__(self):
         super().__init__()
-        self.shape("turtle")
+        self.shape("square")
         self.penup()
         self.color(random.choice(LIST_OF_COLORS))
         self.write(generate_name(), align="right", font=("Courier", 10, "normal"))

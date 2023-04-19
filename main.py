@@ -1,6 +1,6 @@
-import turtle
-from turtle import Turtle, Screen
+from turtle import Screen
 from group import Group
+from member import Member
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -10,6 +10,9 @@ group = Group()
 
 # List of all attendees
 list_of_names = []
+
+# List of all member-objects
+list_of_members = []
 
 generator_is_on = True
 
@@ -35,9 +38,18 @@ number_of_groups = round(number_of_names / size_of_groups)
 print(number_of_groups)
 print(number_of_names)
 
+# Generate as many groups as the user wants
 for _ in range(0, number_of_groups):
     new_group = Group()
-
     print(new_group)
+
+# Generate as many members as names in list_of_names
+for name in list_of_names:
+    new_member = Member(name)
+    list_of_members.append(new_member)
+    print(new_member)
+
+# print(list_of_members)
+
 
 screen.exitonclick()
